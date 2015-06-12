@@ -1,0 +1,16 @@
+---
+  name: "st2_version"
+  runner_type: local-shell-cmd
+  entry_point: ""
+  description: "Get the latest stable or unstable version of St2"
+  enabled: true
+  parameters:
+    version:
+      type: "string"
+      required: true
+      enum:
+        - stable
+        - unstable
+    cmd:
+      default: "curl -Ss -q https://downloads.stackstorm.net/deb/pool/trusty_{{version}}/main/s/st2api/ | grep 'amd64.deb' | sed -e 's~.*>st2api_\\(.*\\)-.*<.*~\\1~g' | sort --version-sort -r | uniq | head -n 1"
+      immutable: true
