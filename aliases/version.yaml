@@ -1,0 +1,6 @@
+---
+name: "version"
+action_ref: "community.st2_version"
+description: "Show the StackStorm version"
+formats:
+  - "st2 version {{branch=stable}}"

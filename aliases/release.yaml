@@ -1,7 +1,0 @@
----
-name: "released"
-action_ref: "community.st2_version"
-formats:
-  - "released {{version}}"
-  - "latest {{version}} StackStorm"
-  - "latest {{version}} st2"
