@@ -3,5 +3,5 @@ name: "released"
 action_ref: "community.st2_version"
 formats:
   - "released {{version}}"
-  - "latest {{version}} st2"
   - "latest {{version}} StackStorm"
+  - "latest {{version}} st2"
