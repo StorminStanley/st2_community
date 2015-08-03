@@ -10,7 +10,7 @@
       required: true
       enum:
         - stable
-        - unstable
+        - latest
     cmd:
-      default: "curl -Ss -q https://downloads.stackstorm.net/deb/pool/trusty_{{branch}}/main/s/st2api/ | grep 'amd64.deb' | sed -e 's~.*>st2api_\\(.*\\)-.*<.*~\\1~g' | sort --version-sort -r | uniq | head -n 1"
+      default: "curl -Ss -q https://downloads.stackstorm.net/deb/pool/trusty_{{branch|replace('latest', 'unstable')}}/main/s/st2api/ | grep 'amd64.deb' | sed -e 's~.*>st2api_\\(.*\\)-.*<.*~\\1~g' | sort --version-sort -r | uniq | head -n 1"
       immutable: true
