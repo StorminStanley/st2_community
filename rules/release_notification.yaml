@@ -1,0 +1,19 @@
+---
+  name: "release_notification"
+  description: "Send Slack message when new repository version is released in GitHub"
+  enabled: true
+
+  trigger:
+    type: "github.repository_event"
+    parameters: {}
+
+  criteria:
+    trigger.type:
+      type: "equals"
+      pattern: "ReleaseEvent"
+
+  action:
+    ref: "slack.post_message"
+    parameters:
+      message: "New *{{trigger.repository}}* version `{{trigger.payload.release.tag_name}}` is released!\n ```{{trigger.payload.release.body}}```\n {{trigger.payload.release.html_url}}"
+      channel: "#events"
