@@ -11,6 +11,10 @@
     trigger.type:
       type: "equals"
       pattern: "ReleaseEvent"
+    # don't spam in chat with all versions at the first run
+    trigger.created_at:
+      type: "timediff_lt"
+      pattern: 86400
 
   action:
     ref: "slack.post_message"
