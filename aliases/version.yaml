@@ -1,0 +1,6 @@
+---
+name: "version"
+action_ref: "community.st2_version"
+description: "Show latest StackStorm version for specific branch"
+formats:
+  - "st2 version {{branch=stable}}"
