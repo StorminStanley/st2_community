@@ -17,7 +17,7 @@
       pattern: 86400
 
   action:
-    ref: "slack.post_message"
+    ref: "slack.chat.postMessage"
     parameters:
-      message: "New *{{trigger.repository}}* version `{{trigger.payload.release.tag_name}}` is released!\n ```{{trigger.payload.release.body}}```\n {{trigger.payload.release.html_url}}"
+      text: "New *{{trigger.repository}}* version `{{trigger.payload.release.tag_name}}` is released!\n ```{{trigger.payload.release.body}}```\n {{trigger.payload.release.html_url}}"
       channel: "#events"
