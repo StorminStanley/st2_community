@@ -9,6 +9,6 @@ trigger:
   type: "typeform.registration"
 criteria: {}
 action:
-  ref: community.register_and_invite
+  ref: st2-community.register_and_invite
   parameters:
     registration_data: "{{trigger}}"
