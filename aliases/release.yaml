@@ -1,7 +1,9 @@
 ---
 name: "released"
-action_ref: "community.st2_version"
+pack: "st2-community"
+action_ref: "st2-community.st2_version"
 formats:
   - "released {{version}}"
   - "latest {{version}} StackStorm"
   - "latest {{version}} st2"
+description: "Let the world know how cool st2 version is."

@@ -1,5 +1,6 @@
 ---
   name: "release_notification"
+  pack: "st2-community"
   description: "Send Slack message when new repository version is released in GitHub"
   enabled: true
 
