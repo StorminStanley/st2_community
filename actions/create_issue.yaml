@@ -1,0 +1,15 @@
+---
+name: "create_issue"
+description: "Create an issue for StackStorm/st2"
+runner_type: "action-chain"
+entry_point: "chains/create_issue.yaml"
+enabled: true
+parameters:
+  title:
+    type: "string"
+    description: "Title of new issue"
+    required: true
+  description:
+    type: "string"
+    description: "Details of issue"
+    required: true

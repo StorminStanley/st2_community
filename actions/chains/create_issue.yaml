@@ -1,0 +1,10 @@
+---
+  chain:
+    -
+      name: "post_github_issue"
+      ref: "st2-community.create_issue"
+      params:
+        title: "{{title}}"
+        description: "{{description}}"
+        repo: "st2"
+        user: "StackStorm"
