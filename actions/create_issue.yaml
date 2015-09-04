@@ -13,3 +13,6 @@ parameters:
     type: "string"
     description: "Details of issue"
     required: true
+  skip_notify:
+    default:
+      - "create_github_issue"

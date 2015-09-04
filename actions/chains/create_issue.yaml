@@ -1,8 +1,8 @@
 ---
   chain:
     -
-      name: "post_github_issue"
-      ref: "st2-community.create_issue"
+      name: "create_github_issue"
+      ref: "github.create_issue"
       params:
         title: "{{title}}"
         description: "{{description}}"
