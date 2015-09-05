@@ -3,5 +3,5 @@ name: "create_issue"
 pack: "st2-community"
 action_ref: "st2-community.create_issue"
 formats:
-  - "issue {{title}} {{description}}"
+  - "issue create {{title}} {{description}}"
 description: "File a StackStorm issue from ChatOps"
