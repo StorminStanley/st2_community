@@ -1,0 +1,25 @@
+---
+chain:
+  -
+    name: "search_kb"
+    ref: "reamaze.article_search"
+    params:
+      query: "{{ query }}"
+    publish:
+      kb_results: "{{ search_kb.result }}"
+    notify:
+      on-failure:
+        message: "Unable to query re:amaze API. Please check it out"
+    on-success: "chatops_parse"
+  -
+    name: "chatops_parse"
+    ref: "st2-community.parse_reamaze_search_kb"
+    params:
+      articles: "{{ kb_results }}"
+    notify:
+      on-success:
+        message: |
+          Found some articles for you! Check it out
+          "{{ chatops_parse.result }}"
+      on-failure:
+        message: "Unable to parse KB results. Please check it out"
