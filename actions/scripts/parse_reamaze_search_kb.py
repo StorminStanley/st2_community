@@ -1,5 +1,5 @@
 from st2actions.runners.pythonrunner import Action
-import os
+import sys
 import jinja2
 
 class ParseSearchKBAction(Action):
