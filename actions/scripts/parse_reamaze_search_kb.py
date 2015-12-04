@@ -1,18 +1,20 @@
 from st2actions.runners.pythonrunner import Action
+import os
 import jinja2
 
 class ParseSearchKBAction(Action):
     TEMPLATE = """{% for article in articles %}
                  * {{ article['title'] }} :: {{ article['url'] }}
-               {% end %}
+               {% endfor %}
                """
 
     def run(self, articles):
-        template = jinja2.Template(trim(ParseSearchKBAction.TEMPLATE))
+        template = jinja2.Template(self.trim(ParseSearchKBAction.TEMPLATE))
         return template.render(articles=articles)
 
     @staticmethod
     def trim(docstring):
+        """From PEP-0257 : https://www.python.org/dev/peps/pep-0257/ """
         if not docstring:
             return ''
         # Convert tabs to spaces (following the normal Python rules)
