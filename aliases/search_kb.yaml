@@ -3,5 +3,8 @@ name: "search_kb"
 pack: "st2-community"
 action_ref: "st2-community.search_kb"
 formats:
+#  - display: "kb {{ query }}"
+#    representation:
+#      - "((search|get)( (me|a|the))? )?kb( for)? {{ query }}"
   - "kb {{query}}"
 description: "Search the StackStorm Knowledge Base for articles"
