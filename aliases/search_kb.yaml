@@ -1,0 +1,23 @@
+---
+name: "search_kb"
+pack: "st2-community"
+action_ref: "reamaze.article_search"
+formats:
+  - display: "kb {{ query }}"
+    representation:
+      - "((search|get)( (me|a|the))? )?kb( for)? {{ query }}"
+  - "kb {{query}}"
+description: "Search the StackStorm Knowledge Base for articles"
+ack:
+  append_url: false
+  format: "Let me search the StackStorm Knowledge Base real quick :heart:"
+result:
+  format: |
+    {% if execution.result.result|length %}
+    found something for you: {~}
+    {% for article in execution.result.result %}
+    {{ loop.index }}. *{{ article.title }}*: {{ article.url }}
+    {% endfor %}
+    {% else %}
+    couldn't find anything, sorry! :( Still, take a look at http://stackstorm.reamaze.com/ {~}
+    {% endif %}
