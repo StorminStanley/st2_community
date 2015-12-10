@@ -9,3 +9,7 @@
     query:
       type: "string"
       required: true
+    skip_notify:
+      default:
+        - "search_kb"
+        - "format_result"
