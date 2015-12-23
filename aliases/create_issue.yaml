@@ -5,10 +5,10 @@ action_ref: "st2-community.create_issue"
 formats:
   - display: "create issue title {{title}} description {{description}}"
     representation:
-    - "create( (a|an))? issue( with)? title(:)? {{ title }}( and)? description(:)? {{ description }}"
+    - "create( (a|an))? issue( with)? title:? {{ title }}( and)? description:? {{ description }}"
 description: "File a StackStorm issue from ChatOps"
 ack:
   append_url: false
   format: "Got it. Creating that issue for you... :book:"
 result:
-  format: "All set!"
+  format: "The path ahead is dangerous... here... take this! {{ execution.result.result.url }}"
