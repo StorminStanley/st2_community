@@ -3,5 +3,13 @@ name: "create_issue"
 pack: "st2-community"
 action_ref: "st2-community.create_issue"
 formats:
-  - "issue create {{title}} {{description}}"
+  - display: "create issue title {{title}} description {{description}}"
+  - representation:
+    - "create( (a|an))? issue( with)? title(:)? {{title}}( and)? description(:)? {{description}}"
+  - "create issue title {{title}} description {{description}}"
 description: "File a StackStorm issue from ChatOps"
+ack:
+  append_url: false
+  format: "Got it. Creating that issue for you... :book:"
+result:
+  format: "All set!"
