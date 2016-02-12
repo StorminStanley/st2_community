@@ -1,0 +1,12 @@
+---
+name: "invite_people"
+pack: "st2-community"
+action_ref: "slack.users.admin.invite"
+formats:
+  - "st2 invite {{email}}"
+description: "Invite someone to the StackStorm Slack Community"
+ack:
+  append_url: false
+  format: "Roger!  Sending that invite now!"
+result:
+  format: "Invitation successfully sent."
