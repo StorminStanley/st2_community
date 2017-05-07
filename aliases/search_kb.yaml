@@ -3,9 +3,6 @@ name: "search_kb"
 pack: "st2-community"
 action_ref: "reamaze.article_search"
 formats:
-  - display: "kb {{ query }}"
-    representation:
-      - "((search|get)( (me|a|the))? )?kb( for)? {{ query }}"
   - "kb {{query}}"
 description: "Search the StackStorm Knowledge Base for articles"
 ack:
