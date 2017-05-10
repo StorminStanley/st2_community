@@ -1,6 +1,6 @@
 ---
 name: "invite_people"
-pack: "st2-community"
+pack: "st2_community"
 action_ref: "slack.users.admin.invite"
 formats:
   - "st2 invite {{email}}"
