@@ -1,6 +1,6 @@
 ---
 name: "search_kb"
-pack: "st2-community"
+pack: "st2_community"
 action_ref: "reamaze.article_search"
 formats:
   - "kb {{query}}"

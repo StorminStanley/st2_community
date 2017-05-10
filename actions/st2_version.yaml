@@ -1,6 +1,6 @@
 ---
   name: "st2_version"
-  pack: "st2-community"
+  pack: "st2_community"
   runner_type: local-shell-cmd
   entry_point: ""
   description: "Get the latest stable or unstable version of St2"

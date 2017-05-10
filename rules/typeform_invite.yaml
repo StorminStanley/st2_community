@@ -1,7 +1,7 @@
 # typeform_invite.yaml
 ---
 name: "typeform_invite"
-pack: "st2-community"
+pack: "st2_community"
 enabled: true
 description: "Write to DB and send invite on new user submission"
 trigger:
@@ -9,6 +9,6 @@ trigger:
   type: "typeform.registration"
 criteria: {}
 action:
-  ref: st2-community.register_and_invite
+  ref: st2_community.register_and_invite
   parameters:
     registration_data: "{{trigger}}"
