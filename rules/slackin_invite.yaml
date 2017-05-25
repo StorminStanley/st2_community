@@ -1,0 +1,21 @@
+# slackin_invite.yaml
+---
+name: "slackin_invite"
+pack: "st2_community"
+enabled: true
+description: "Write to DB and send invite on new user submission"
+
+trigger:
+  type: "core.st2.webhook"
+  parameters:
+    url: "slackinvite"
+
+criteria:
+  trigger.body:
+    pattern: "email"
+    type: "exists"
+
+action:
+  ref: st2_community.slackin_register
+  parameters:
+    registration_data: "{{trigger}}"
