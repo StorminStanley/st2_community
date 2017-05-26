@@ -20,6 +20,5 @@
         first_name: "{{first_name}}"
         last_name: "{{last_name}}"
         email: "{{email}}"
-        notes: "{{source}}"
         #tags: "community{% if registration_data.newsletter == '1' %},community_newsletter{% endif %}"
   default: "insert_registration"

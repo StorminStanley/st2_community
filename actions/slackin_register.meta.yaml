@@ -1,10 +1,10 @@
 ---
-  name: "register"
+  name: "slackin_register"
   pack: "st2_community"
   runner_type: "action-chain"
   description: "Register user in active campaign based on slack invite"
   enabled: true
-  entry_point: "chains/register.yaml"
+  entry_point: "chains/slackin_register.yaml"
   parameters:
     registration_data:
       type: "object"
