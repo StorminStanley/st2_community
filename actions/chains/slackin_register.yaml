@@ -1,0 +1,24 @@
+---
+  chain:
+    -
+      name: "insert_registration"
+      ref: "mysql.insert"
+      params:
+        connection: "community"
+        table: "user_registration"
+        data: "{{registration_data.body}}"
+      publish:
+        email: "{{registration_data.body.email}}"
+        first_name: "{{registration_data.body.first_name}}"
+        last_name: "{{registration_data.body.last_name}}"
+        source: "{{registration_data.body.source}}"
+      on-success: "add_to_ac"
+    -
+      name: "add_to_ac"
+      ref: "activecampaign.contact_sync"
+      params:
+        first_name: "{{first_name}}"
+        last_name: "{{last_name}}"
+        email: "{{email}}"
+        #tags: "community{% if registration_data.newsletter == '1' %},community_newsletter{% endif %}"
+  default: "insert_registration"
